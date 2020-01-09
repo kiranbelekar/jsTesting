@@ -102,3 +102,59 @@ const willIGetNewPhone = new Promise(
     }
 }
 );
+//////////////////////////////////////////////////////////////////////////
+export function getCommitData(url, headerData, repoProvider = '', totalCommits, prID, queryParams, hasPages, serverType) {
+  queryParams = (!hasPages) ? queryParams : {};
+   return new Promise((resolve, reject) => {
+      BatchedBridge.enqueueNativeCall(
+      moduleID,
+      methodID,
+      args,
+      data => resolve(data),
+      );
+      });
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+export function getCommitData(url, headerData, repoProvider = '', totalCommits, prID, queryParams, hasPages, serverType) {
+queryParams = (!hasPages) ? queryParams : {};
+return new Promise((resolve, reject) => {
+    let payloadCommitsMeta = {
+        url,
+        headerData,
+        repoProvider,
+        totalCommits,
+        prID,
+        queryParams,
+        hasPages,
+        resolve,
+        serverType
+    }
+    pullRequestInterfaceController.setRepoProviderContext(payloadCommitsMeta.repoProvider, serverType).getCommitsPayload(payloadCommitsMeta);
+});
+}
+//////////////////////////////////////////////////////////////////////////
+export function getCommitData(url, headerData, repoProvider = '', totalCommits, prID, queryParams, hasPages, serverType) {
+  queryParams = (!hasPages) ? queryParams : {};
+   return new Promise((resolve, reject) => {
+      BatchedBridge.enqueueNativeCall(
+      moduleID,
+      methodID,
+      args,
+      data => resolve(data),
+      );
+      });
+}
+
+//////////////////////////////////////////////////////////////////////////
+export function getCommitData(url, headerData, repoProvider = '', totalCommits, prID, queryParams, hasPages, serverType) {
+  queryParams = (!hasPages) ? queryParams : {};
+   return new Promise((resolve, reject) => {
+      BatchedBridge.enqueueNativeCall(
+      moduleID,
+      methodID,
+      args
+      );
+      });
+}
