@@ -88,4 +88,17 @@ for (;;) {  // Noncompliant; end condition omitted
   });
 
   
+///////////////////////////////////////////////////////////////////
+const isMomHappy = true;
 
+const willIGetNewPhone = new Promise(
+(resolve, reject) => { // fat arrow
+    if (isMomHappy) {
+        const phone = {
+            brand: 'Samsung',
+            color: 'black'
+        };
+        resolve(phone);
+    }
+}
+);
