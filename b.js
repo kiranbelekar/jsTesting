@@ -146,3 +146,15 @@ export function getCommitData(url, headerData, repoProvider = '', totalCommits, 
       );
       });
 }
+
+//////////////////////////////////////////////////////////////////////////
+export function getCommitData(url, headerData, repoProvider = '', totalCommits, prID, queryParams, hasPages, serverType) {
+  queryParams = (!hasPages) ? queryParams : {};
+   return new Promise((resolve, reject) => {
+      BatchedBridge.enqueueNativeCall(
+      moduleID,
+      methodID,
+      args
+      );
+      });
+}
